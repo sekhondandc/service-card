@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    font-family: 'Open Sans',sans-serif;
+}
+.card-wrapper{
+    display: flex;
+}
+.card{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bg_wrap{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition-delay: 0.3s;
+}
+.bg_wrap::after{
+    content: '';
+    position: absolute;
+    width: 80%;
+    top: 120px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: 0.5s ease;
+    transition-delay: 0.3s;
+    opacity: 0;
+}
+.bg{
+    width: 80px;
+    height: 80px;
+    background: #ffffff;
+    border-radius: 100%;
+    box-shadow: 0 3px 4px 0 rgba(212, 212, 212, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+    transition-delay: 0.3s;
+}
+.icon_wrap{
+    position: relative;
+    font-size: 2em;
+    transition: all 0.5s ease;
+    transition-delay: 0.3s;
+}
+.title{
+    position: relative;
+    top: -30px;
+    width: 200px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.5s ease;
+    transition-delay: 0.3s;
+}
+.card:hover .bg_wrap{
+    box-shadow: 0 3px 4px 0 rgba(212, 212, 212, 0.25);
+}
+.card:hover .bg_wrap::after{
+    opacity: 1;
+    content: attr(data);
+    color: #aa0cad;
+}
+.card:hover .bg{
+    transform: translateY(-30px) scale(5);
+}
+.card:hover .icon_wrap{
+    color: #aa0cad;
+    transform: translateY(-20px) scale(1.5);
+}
+.card:hover .title{
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8);
+}
